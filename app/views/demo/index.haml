@@ -1,0 +1,79 @@
+%head
+  %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
+  %title
+    Netzke framework demo/tutorial - integrating Ext JS and Rails
+    
+%body
+  %h2 Netzke framework demo/tutorial
+  
+  %h3 BasicApp
+  
+  %p
+    =link_to "Introduction", :controller => "basic_app", :action => "intro"
+  %p
+    =link_to "Live demo", :controller => "basic_app", :action => "demo"
+  
+  %h3 GridPanel
+  %p
+    Extensive
+    = link_to "demo/tutorial", :controller => "grid_panel"
+    of GridPanel as a stand-alone widget
+  
+  %p
+    GridPanel integrated into an "application" (Ext.Viewport-based widget). See it in action in different places through out the
+    = link_to "BasicApp demo", :controller => "basic_app", :action => "intro"
+
+  %h3 FormPanel
+  See it in action in different places through out the
+  = link_to "BasicApp demo", :controller => "basic_app", :action => "intro"
+  
+  %h3 TabPanel
+  See the configuration window for Grid/FormPanel in the
+  = link_to "BasicApp demo", :controller => "basic_app", :action => "intro"
+  
+  %h3 AccordionPanel
+  = link_to "Live demo", :controller => "accordion_panel"
+  
+  %h3 Window
+  = link_to "Live demo", :controller => "window"
+
+  %h3 TreePanel
+  Demo coming soon
+  
+  %h3 Composite widgets
+  %p
+    = link_to "OneToManyGridSet", "basic_app#bossesAndClerks"
+    proof-of-concept (see a comprehensive tutorial on how it was built
+    = link_to "here", "http://blog.writelesscode.com/past/2009/3/27/building_rails_extjs_reusable_components_with_netzke_part_2/"
+    )
+  %p
+    = link_to "BossesAndClerksExt", "basic_app#bossesAndClerksExt"
+    \- learn how it was built
+    = link_to "here", "http://blog.writelesscode.com/blog/2009/09/24/building-rails-extjs-reusable-components-with-netzke-part-3/"
+
+  %h2 The code, info, etc
+  %p
+    Source code for this demo:
+    %a{ :href => "http://github.com/skozlov/netzke-demo" }
+      http://github.com/skozlov/netzke-demo
+  %p
+    Discuss this demo on
+    = link_to "Netzke Google Groups", "http://groups.google.com/group/netzke"
+  %p
+    Netzke framework:
+    %a{ :href => "http://netzke.org" }
+      project website
+    ,
+    %a{ :href => "http://github.com/skozlov/netzke-core" }
+      netzke-core
+    ,
+    %a{ :href => "http://github.com/skozlov/netzke-basepack" }
+      netzke-basepack
+  %p
+    News about Netzke development and tutorials:
+    %a{ :href => "http://blog.writelesscode.com" }
+      http://blog.writelesscode.com
+    ,
+    = link_to "@skozlov", "http://twitter.com/skozlov"
+
+  = render :partial => "shared/analytics"

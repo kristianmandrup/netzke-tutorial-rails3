@@ -1,0 +1,35 @@
+<% title "Netzke::GridPanel (5)" %>
+     
+<ul>
+  <li><%= link_to "<< Example 4", "/grid_panel/example4"%></li> 
+  <li><%= link_to "Example 6 >>", "/grid_panel/example6"%></li>
+<ul>
+
+
+<h2>Example 5: Configuring the bars</h2>
+<p>You can easily customize the bottom bar, or even move the actions to the top bar.</p>
+
+<% coderay do %>
+netzke :clerks_with_custom_bottom_bar,
+    :class_name => 'GridPanel',
+    :model => 'Clerk',
+    :ext_config => {
+      :bbar => nil,
+      :tbar => [{
+        :menu => [:add, :edit, :apply, :del], :text => "Edit inline", :icon => "/images/icons/table.png"
+      },{
+        :menu => [:add_in_form, :edit_in_form], :text => "Edit in form", :icon => "/images/icons/application_form.png"
+      }]
+    }
+<% end %>
+
+<p>Result:</p>
+<%= netzke :clerks_with_custom_bottom_bar,
+    :class_name => 'GridPanel',
+    :model => 'Clerk',
+    :ext_config => {
+      :bbar => nil,
+      :tbar => [{:menu => [:add, :edit, :apply, :del], :text => "Edit inline", :icon => "/images/icons/table.png"}, {:menu => [:add_in_form, :edit_in_form], :text => "Edit in form", :icon => "/images/icons/application_form.png"}]
+    }
+%>                  
+

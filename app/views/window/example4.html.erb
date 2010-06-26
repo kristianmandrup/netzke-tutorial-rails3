@@ -1,0 +1,28 @@
+<% title "Netzke::Window (4)" %>
+
+<ul>
+<li><%= link_to "<< Example 3", "/window/example3"%></li> 
+<ul>
+
+
+<h2>Example 4: empty window with predefined dimensions that can be reopened after closing</h2>
+<p>Simply setting the <tt>Ext.Window</tt>'s <tt>closeAction</tt> option to "hide"</p>
+<p>Code:</p>
+<% coderay do %>
+  netzke :reopenable_window, 
+    :class_name => "Window", 
+    :ext_config => {
+      :close_action => "hide", 
+      :width => 200, :height => 100
+    }
+<% end %>
+<br>
+<input type="button" value="Show window" onClick="Netzke.page.reopenableWindow.show()" />
+<%= netzke :reopenable_window, 
+      :class_name => "Window", 
+      :ext_config => {
+        :close_action => "hide", 
+        :width => 200, :height => 100
+      } 
+%>
+<br>

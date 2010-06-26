@@ -1,0 +1,42 @@
+<% title "Netzke::Window (3)" %>
+
+<ul>
+  <li><%= link_to "<< Example 2", "/window/example2"%></li> 
+  <li><%= link_to "Example 4 >>", "/window/example4"%></li>
+<ul>    
+
+
+<h2>Example 3: a window nesting BossesAndClerks widget (from <a href="http://blog.writelesscode.com/blog/2009/09/24/building-rails-extjs-reusable-components-with-netzke-part-3/">this</a> tutorial)</h2>
+<p>Just a window that remembers its size and position</p>
+<p>Code:</p>
+<% coderay do %>
+  netzke :window_with_bosses_and_clerks, 
+    :class_name => "Window", 
+    :persistent_config => true, 
+    :ext_config => {
+      :width => "70%", :height => 400
+    },
+    :item => {
+      :class_name => "BossesAndClerks", 
+      :ext_config => {
+        :header => false, :border => true
+      }
+    }
+<% end %>
+<br>
+<input type="button" value="Show window" onClick="Netzke.page.windowWithBossesAndClerks.show(); Ext.get(this).hide();" />
+
+<%= netzke :window_with_bosses_and_clerks, 
+      :class_name => "Window", 
+      :persistent_config => true, 
+      :ext_config => {
+        :width => "70%", :height => 400
+      },
+      :item => {
+        :class_name => "BossesAndClerks", 
+        :ext_config => {
+          :header => false, :border => true
+        }
+      } 
+%>
+

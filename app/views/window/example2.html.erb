@@ -1,0 +1,41 @@
+<% title "Netzke::Window (2)" %>
+
+<ul>
+  <li><%= link_to "<< Example 1", "/window/example1"%></li> 
+  <li><%= link_to "Example 3 >>", "/window/example3"%></li>
+<ul>    
+
+<h2>Example 2: a window nesting a GridPanel</h2>
+<p>Code:</p>
+<% coderay do %>
+  netzke :window_with_grid_panel, 
+    :class_name => "Window", 
+    :persistent_config => true, 
+    :ext_config => {
+      :width => 700, :height => 400
+    },
+    :item => {
+      :class_name => "GridPanel", 
+      :model => "Boss", 
+      :ext_config => {
+        :header => false, :border => true
+      }
+    }
+<% end %>
+<br>
+<input type="button" value="Show window" onClick="Netzke.page.windowWithGridPanel.show(); Ext.get(this).hide();" />
+
+<%= netzke :window_with_grid_panel, 
+      :class_name => "Window", 
+      :persistent_config => true,
+      :ext_config => {
+        :width => 700, :height => 400
+      },
+      :item => {
+        :class_name => "GridPanel", 
+        :model => "Boss", 
+        :ext_config => {
+          :header => false, :border => true
+        }
+      } 
+%>

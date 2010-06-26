@@ -1,0 +1,29 @@
+<% title "Netzke::GridPanel (4)" %>
+     
+<ul>
+<li><%= link_to "<< Example 3", "/grid_panel/example3"%></li> 
+<li><%= link_to "Example 5 >>", "/grid_panel/example5"%></li>
+<ul>
+
+<h2>Example 4: Permissions</h2>
+You can specify which actions are allowed for this grid
+<% coderay do %>
+netzke :bosses_with_permissions, 
+  :class_name => "GridPanel", 
+  :model => 'Boss', 
+  :ext_config => {
+    :prohibit_update => true,
+    :prohibit_delete => true
+  }
+<% end %>
+<p>Result:</p>
+<%= netzke :bosses_with_permissions, 
+  :class_name => "GridPanel", 
+  :model => 'Boss', 
+  :ext_config => {
+    :prohibit_update => true,
+    :prohibit_delete => true
+  } %>
+<p class="small">A word about the security: it's not only about disabling buttons. Even if the user manages to submit a prohibited operation, the server side of the widget will block the attempt.
+</p>                                   
+

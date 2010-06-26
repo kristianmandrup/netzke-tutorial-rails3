@@ -1,0 +1,19 @@
+body {padding: 10px;}
+.small {font-size: .9em;}
+p {margin-top: 10px;}
+h1 {font-size: 1.5em;}
+h2 {margin: 20px 0 5px;}
+
+.bulb-on {
+	background: url(/images/icons/lightbulb.png) no-repeat;
+	width:16px;
+	height:16px;
+}
+.bulb-off {
+	background: url(/images/icons/lightbulb_off.png) no-repeat;
+	width:16px;
+	height:16px;
+}
+.netzke-widget {
+  width: 900px;
+}

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  salary: 1
+  boss_id: 1
+  subject_to_lay_off: false
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  salary: 1
+  boss_id: 1
+  subject_to_lay_off: false

@@ -1,0 +1,36 @@
+<% title "Netzke::GridPanel (2)" %>
+
+<ul>
+<li><%= link_to "<< Example 1", "/grid_panel/example1"%></li> 
+<li><%= link_to "Example 3 >>", "/grid_panel/example3"%></li>
+<ul>    
+
+<h2>Example 1: Control over columns</h2>
+<p>If you need more control over which columns to display and how, you can provide <tt>:columns</tt> option:</p>
+<% coderay do %>
+  netzke :bosses_custom_columns, 
+    :class_name => "GridPanel", 
+    :model => 'Boss', 
+    :ext_config => {
+      :rows_per_page => 20, 
+      :title => "Bosses",
+      :width => 400
+    },
+    :columns => [:id, # id should always be included and is by default hidden
+      :last_name, 
+      {:name => :salary, :editable => false, :label => "$", :renderer => 'usMoney'}, 
+      {:name => :email, :width => 180}]
+<% end %>
+<p>Result:</p>
+<%= netzke :bosses_custom_columns, 
+  :class_name => "GridPanel", 
+  :model => 'Boss', 
+  :ext_config => {
+    :title => "Bosses",
+    :width => 400
+  },
+  :columns => [:id, # id should always be included and is by default hidden
+    :last_name,
+    {:name => :salary, :editable => false, :label => "$", :renderer => 'usMoney'}, 
+    {:name => :email, :width => 180}] %>     
+    
