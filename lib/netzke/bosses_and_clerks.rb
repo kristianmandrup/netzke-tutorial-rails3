@@ -1,5 +1,30 @@
 module Netzke
-  class BossesAndClerks < BorderLayoutPanel
+  class BossesAndClerks < BorderLayoutPanel 
+    def default_config
+      super.merge({
+        :regions => {
+          :center => {
+            :widget_class_name => "Panel"
+          },
+          :east => {
+            :widget_class_name => "Panel",
+            :region_config => {
+              :width => 240,
+              :split => true
+            }
+          },
+          :south => {
+            :widget_class_name => "Panel",
+            :region_config => {
+              :height => 150,
+              :split => true
+            }
+          }
+        }
+      })
+    end
+    
+    
     def default_config
       super.merge({
         :regions => {
@@ -71,7 +96,7 @@ module Netzke
       # instantiate the widget
       clerks_grid = aggregatee_instance(:south)
       clerks_data = clerks_grid.get_data
-
+    
       # pass 
       {
         :south => {:load_store_data => clerks_data, :set_title => "Clerks for #{boss.name}"}, 

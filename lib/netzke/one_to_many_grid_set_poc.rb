@@ -3,7 +3,6 @@ module Netzke
   class OneToManyGridSetPoc < BorderLayoutPanel
     # Two grids as regions
     def default_config
-      puts "passed_config: #{@passed_config.inspect}"
       {:widget_class_name=>"OneToManyGridSetPoc", :class_name=>"OneToManyGridSetPoc", :name=>:bosses_and_clerks}
       super.merge({
         :ext_config => {
