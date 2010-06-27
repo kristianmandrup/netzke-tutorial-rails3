@@ -1,0 +1,15 @@
+module Netzke
+  class <%= class_name %> < BorderLayoutPanel
+    def default_config
+      super.merge({
+        :regions => {
+          <%= regions_js %>
+        },
+        :ext_config => {
+          :header => false
+        }
+      })
+    end
+  
+  end
+end
