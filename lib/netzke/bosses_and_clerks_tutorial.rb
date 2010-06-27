@@ -4,7 +4,8 @@ module Netzke
       super.merge({
         :regions => {
           :center => {
-            :widget_class_name => "Panel",
+            :widget_class_name => "GridPanel",
+            :data_class_name => "Boss",
             :ext_config => {
               :title => "Bosses"
             }
@@ -20,7 +21,8 @@ module Netzke
             }
           },
           :south => {
-            :widget_class_name => "Panel",
+            :widget_class_name => "GridPanel",
+            :data_class_name => "Clerk",
             :ext_config => {
               :title => "Clerks"
             },
@@ -35,6 +37,7 @@ module Netzke
         }
       })
     end
+
 
   end
 end
