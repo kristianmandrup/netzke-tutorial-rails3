@@ -1,5 +1,12 @@
-module Netzke
+module Netzke::Widget
   class BossesAndClerksTutorial < BorderLayoutPanel 
+    api :select_boss
+
+    def select_boss(params)
+      logger.debug "!!! params[:boss_id]: #{params[:boss_id].inspect}\n"
+      {}
+    end
+
     def default_config
       super.merge({
         :regions => {
@@ -38,7 +45,8 @@ module Netzke
       })
     end
 
-    def self.js_extend_properties
+    def self.js_extend_properties 
+      puts "!!! js_extend_properties"
       super.merge({
         :init_component => <<-END_OF_JAVASCRIPT.l,
           function(){

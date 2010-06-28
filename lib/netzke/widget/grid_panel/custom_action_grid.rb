@@ -1,21 +1,17 @@
-module Netzke
-  class my_grid_panel < GridPanel
-    DETAILS       = "details"
-    SHOW_DETAILS  = "show_#{DETAILS}"
-    MSG_WIDTH     = 300
-  
+module Netzke::Widget
+  class CustomActionGrid < GridPanel
     def actions
       super.merge({
-        :show_details => {:text => SHOW_DETAILS.humanize, :disabled => true}
+        :show_details => {:text => "Show details", :disabled => true}
       })
     end
     
     def default_bbar
-      [SHOW_DETAILS, "-", *super]
+      ["show_details", "-", *super]
     end
     
     def default_context_menu
-      [SHOW_DETAILS, "-", *super]
+      ["show_details", "-", *super]
     end
     
     def self.js_extend_properties
@@ -39,8 +35,8 @@ module Netzke
             
             
             Ext.Msg.show({
-              title: DETAILS.humanize,
-              width: MSG_WIDTH,
+              title: "Details",
+              width: 300,
               msg: html
             });
           }

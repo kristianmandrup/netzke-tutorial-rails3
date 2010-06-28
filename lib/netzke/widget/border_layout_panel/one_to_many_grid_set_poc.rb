@@ -1,9 +1,9 @@
-module Netzke
+module Netzke::Widget
   # Proof of concept for two grids that are related by one-to-many association
   class OneToManyGridSetPoc < BorderLayoutPanel
     # Two grids as regions
     def default_config
-      {:widget_class_name=>"OneToManyGridSetPoc", :class_name=>"OneToManyGridSetPoc", :name=>:bosses_and_clerks}
+      {:class_name=>"OneToManyGridSetPoc", :name=>:bosses_and_clerks}
       super.merge({
         :ext_config => {
           :header => false

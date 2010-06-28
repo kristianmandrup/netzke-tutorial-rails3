@@ -1,42 +1,46 @@
-module Netzke
-  class CustomActionGrid < GridPanel
+module Netzke::Widget
+  class MyGridPanel < GridPanel
+    DETAILS       = "details"
+    SHOW_DETAILS  = "show_#{DETAILS}"
+    MSG_WIDTH     = 300
+
     def actions
       super.merge({
-        :show_details => {:text => "Show details", :disabled => true}
+        :show_details => {:text => SHOW_DETAILS.humanize, :disabled => true}
       })
     end
-    
+
     def default_bbar
-      ["show_details", "-", *super]
+      [SHOW_DETAILS, "-", *super]
     end
-    
+
     def default_context_menu
-      ["show_details", "-", *super]
+      [SHOW_DETAILS, "-", *super]
     end
-    
+
     def self.js_extend_properties
       {
         :init_component => <<-END_OF_JAVASCRIPT.l,
           function(){
             #{js_full_class_name}.superclass.initComponent.call(this);
-            
+        
             this.getSelectionModel().on('selectionchange', function(selModel){
               this.actions.showDetails.setDisabled(selModel.getCount() != 1);
             }, this);
           }
         END_OF_JAVASCRIPT
-        
+    
         :on_show_details => <<-END_OF_JAVASCRIPT.l,
           function(){
             var tmpl = new Ext.Template("<b>{0}</b>: {1}<br/>"), html = "";
             Ext.iterate(this.getSelectionModel().getSelected().data, function(key, value){
               html += tmpl.apply([key.humanize(), value]);
             }, this);
-            
-            
+        
+        
             Ext.Msg.show({
-              title: "Details",
-              width: 300,
+              title: DETAILS.humanize,
+              width: MSG_WIDTH,
               msg: html
             });
           }
@@ -45,3 +49,4 @@ module Netzke
     end
   end
 end
+

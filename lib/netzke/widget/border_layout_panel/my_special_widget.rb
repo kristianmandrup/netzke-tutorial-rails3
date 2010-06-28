@@ -1,5 +1,5 @@
-module Netzke
-  class MySpecial < BorderLayoutPanel
+module Netzke::Widget::BorderLayoutPanels
+  class MySpecial < Base
     def default_config
       super.merge({
         :regions => {

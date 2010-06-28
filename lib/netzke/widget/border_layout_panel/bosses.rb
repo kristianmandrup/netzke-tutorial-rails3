@@ -1,4 +1,4 @@
-module Netzke
+module Netzke::Widget
   class BossesAndClerks < BorderLayoutPanel
     def default_config
       super.merge({

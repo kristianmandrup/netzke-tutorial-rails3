@@ -1,4 +1,4 @@
-module Netzke
+module Netzke::Widget
   class BasicAppDemo < BasicApp
     # Customizing the application layout. We can put any stuff we want in here,
     # the only agreement is to specify 2 fit panels with ids "main-panel" &
