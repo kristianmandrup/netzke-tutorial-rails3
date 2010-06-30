@@ -5,12 +5,16 @@ class UserSessionsController < ApplicationController
   def new
     @user_session = UserSession.new
   end
+
+  def main
+    Netzke::Main    
+  end
   
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      Netzke::Base.login
+      main.login
       redirect_back_or_default "/basic_app/demo"
     else
       render :action => :new
@@ -20,7 +24,7 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
-    Netzke::Base.logout
+    main.logout
     redirect_back_or_default "/basic_app/demo"
   end
 end

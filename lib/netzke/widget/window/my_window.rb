@@ -3,9 +3,29 @@ module Netzke::Widget
     class MyWindow < Base
       def default_config
         super.merge({
-          :item => {
-            :class_name => "BossesAndClerks"
-          }
+          :height => 300,
+          :width => 300,
+          :layout => 'hbox',
+          :layout_config => {
+            :align => 'middle',
+            :pack => 'start'
+          },
+          :defaults => {
+            :frame => true,
+            :flex => 1
+          },
+          :items => [
+            {
+              :title => 'Panel 1'
+            },
+            {
+              :title => 'Panel 2'
+            },
+            {
+              :title => 'Panel 3'
+            }
+          ]
+        }).show();
       end
     end
 end

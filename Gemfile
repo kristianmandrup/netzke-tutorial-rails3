@@ -11,8 +11,12 @@ gem 'faker'
 gem 'haml'
 gem 'coderay'
 gem 'memcache'
+gem 'proxy_party'
 gem 'memcache-client'  
 gem 'netzke_widget_generators'
+gem 'mongoid'
+gem 'bson_ext'
+gem 'memoize'
 
 # gem 'mysql'
 
