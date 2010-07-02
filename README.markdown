@@ -2,6 +2,12 @@
 
 This is a port of the Netzke tutorial to run on Rails 3. It has been tested with Rails 3.beta4.
 
+For a minimal Netzke Rails 3 app configuration, check out:
+
+<code>http://github.com/Wanderwelten/netzke-rails3-minimal</code>
+
+We plan to provide a custom Rails 3 application generator pretty soon... ;)
+
 ## Installation and configuration
                                      
 ### Install the netzke configurator gem:
